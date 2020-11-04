@@ -6,16 +6,16 @@
 /*   By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 10:16:01 by imedgar           #+#    #+#             */
-/*   Updated: 2020/11/01 10:19:33 by imedgar          ###   ########.fr       */
+/*   Updated: 2020/11/04 19:14:20 by imedgar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int     ft_strcmp(const char *s1, const char *s2)
+int		ft_strcmp(const char *s1, const char *s2)
 {
-    while (*s1 || *s2)
-        if (*s1++ != *s2++)
-            return (*--s1 - *--s2);
-    return (0);
+	while (*s1 || *s2)
+		if (*s1++ != *s2++)
+			return (*--s1 - *--s2);
+	return (0);
 }
