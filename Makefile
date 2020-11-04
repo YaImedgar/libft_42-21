@@ -6,7 +6,7 @@
 #    By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/03 23:24:43 by imedgar           #+#    #+#              #
-#    Updated: 2020/05/04 13:01:00 by imedgar          ###   ########.fr        #
+#    Updated: 2020/11/04 19:04:22 by imedgar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,39 +45,28 @@ SRC		=	ft_atoi.c			\
 			ft_strtrim.c		\
 			ft_substr.c			\
 			ft_tolower.c		\
-			ft_toupper.c
-
-SRCBNS	=	ft_lstadd_back.c	\
-			ft_lstadd_front.c	\
-			ft_lstclear.c		\
-			ft_lstdelone.c		\
-			ft_lstiter.c		\
-			ft_lstlast.c		\
-			ft_lstmap.c			\
-			ft_lstnew.c			\
-			ft_lstsize.c
+			ft_toupper.c		\
+			ft_strcmp.c
 
 HEADER	=	libft.h
 
 CC		=	gcc
-CFLAGS	=	-c -Wall -Werror -Wextra
+CFLAGS	=	-Wall -Werror -Wextra -c -MMD
 RM		=	rm -f
 AR		=	ar rcs
-OBJ		=	$(SRC:c=o)
-OBJBNS	=	$(SRCBNS:c=o)
-
+OBJ		=	$(SRC:.c=.o)
+DEP     = $(SRC:.c=.d)
 
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(HEADER)
+-include $(DEP)
+
+$(NAME): $(OBJ)
 	$(AR) $@ $(OBJ)
 
-bonus: $(OBJ) $(OBJBNS)
-	$(AR) $(NAME) $(OBJ) $(OBJBNS)
-
 clean:
-	$(RM) $(OBJ) $(OBJBNS)
+	$(RM) $(OBJ) $(DEP) $(OBJBNS)
 
 fclean: clean
 	$(RM) $(NAME)

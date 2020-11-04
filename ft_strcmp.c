@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imedgar <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/29 22:18:20 by imedgar           #+#    #+#             */
-/*   Updated: 2020/05/04 13:38:44 by imedgar          ###   ########.fr       */
+/*   Created: 2020/11/01 10:16:01 by imedgar           #+#    #+#             */
+/*   Updated: 2020/11/01 10:19:33 by imedgar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_lstsize(t_list *lst)
+int     ft_strcmp(const char *s1, const char *s2)
 {
-	int len;
-
-	len = 0;
-	while (lst)
-	{
-		++len;
-		lst = lst->next;
-	}
-	return (len);
+    while (*s1 || *s2)
+        if (*s1++ != *s2++)
+            return (*--s1 - *--s2);
+    return (0);
 }

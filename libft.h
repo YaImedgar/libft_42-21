@@ -6,7 +6,7 @@
 /*   By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 22:58:16 by imedgar           #+#    #+#             */
-/*   Updated: 2020/05/04 11:04:52 by imedgar          ###   ########.fr       */
+/*   Updated: 2020/11/04 18:53:57 by imedgar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ int				ft_memcmp(const void *s1, const void *s2, size_t n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+int     		ft_strcmp(const char *s1, const char *s2);
 
 #endif
