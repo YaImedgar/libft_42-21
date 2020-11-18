@@ -6,7 +6,7 @@
 #    By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/03 23:24:43 by imedgar           #+#    #+#              #
-#    Updated: 2020/11/18 20:33:06 by imedgar          ###   ########.fr        #
+#    Updated: 2020/11/18 22:12:38 by imedgar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,6 +79,10 @@ CFLAGS			=	-Wall -Werror -Wextra -c -MMD
 RM				=	rm -f
 AR				=	ar rcs
 
+ifeq ($(DEBUG), YES)
+CFLAGS			+= -g
+endif
+
 all: $(NAME)
 
 -include $(DEP)
@@ -97,6 +101,9 @@ $(DIR_OBJ)%.o: $(DIR_GNL_SRC)%.c
 
 $(DIR_OBJ):
 	mkdir -p $(DIR_OBJ)
+
+debug:
+	$(MAKE) DEBUG=YES re --no-print-directory
 
 clean:
 	$(RM)r $(DIR_OBJ)
