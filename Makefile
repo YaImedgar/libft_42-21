@@ -6,13 +6,13 @@
 #    By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/03 23:24:43 by imedgar           #+#    #+#              #
-#    Updated: 2020/11/18 19:39:01 by imedgar          ###   ########.fr        #
+#    Updated: 2020/11/18 20:33:06 by imedgar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	libft.a
 
-SRC				=	ft_atoi.c			\
+SRC_LIB			=	ft_atoi.c			\
 					ft_bzero.c			\
 					ft_calloc.c			\
 					ft_isalnum.c		\
@@ -57,16 +57,21 @@ SRC_PRINTF		=	ft_printf.c			\
 					ft_formnbr.c		\
 					ft_sub_func.c
 
+SRC_GNL			=	get_next_line.c		\
+					get_next_line_utils.c
+
 DIR_SRC			=	./srcs/
 DIR_LIB_SRC		=	$(addprefix $(DIR_SRC), libft/)
 DIR_PRINTF_SRC	=	$(addprefix $(DIR_SRC), printf/)
+DIR_GNL_SRC		=	$(addprefix $(DIR_SRC), get_next_line/)
 
-HEADER			=	libft.h
 DIR_OBJ			=	./obj/
 DIR_INC			=	./includes/
 
-OBJ				=	$(addprefix $(DIR_OBJ),$(SRC:.c=.o))	\
-					$(addprefix $(DIR_OBJ),$(SRC_PRINTF:.c=.o))
+OBJ				=	$(addprefix $(DIR_OBJ),$(SRC_LIB:c=o))		\
+					$(addprefix $(DIR_OBJ),$(SRC_PRINTF:c=o))	\
+					$(addprefix $(DIR_OBJ),$(SRC_GNL:c=o))	
+
 DEP 	    	=	$(OBJ:.o=.d)
 
 CC				=	gcc
@@ -85,6 +90,9 @@ $(DIR_OBJ)%.o: $(DIR_LIB_SRC)%.c
 	$(CC) -I $(DIR_INC) $(CFLAGS) -o $@ $<
 
 $(DIR_OBJ)%.o: $(DIR_PRINTF_SRC)%.c
+	$(CC) -I $(DIR_INC) $(CFLAGS) -o $@ $<
+
+$(DIR_OBJ)%.o: $(DIR_GNL_SRC)%.c
 	$(CC) -I $(DIR_INC) $(CFLAGS) -o $@ $<
 
 $(DIR_OBJ):
