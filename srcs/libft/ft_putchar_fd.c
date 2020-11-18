@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: imedgar <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/30 00:06:50 by imedgar           #+#    #+#             */
-/*   Updated: 2020/05/03 22:12:11 by imedgar          ###   ########.fr       */
+/*   Created: 2020/04/30 00:08:06 by imedgar           #+#    #+#             */
+/*   Updated: 2020/11/18 19:33:41 by imedgar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				ft_putstr_fd(char *s, int fd)
+int			ft_putchar_fd(char c, int fd)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+	return (write(fd, &c, 1));
 }
