@@ -6,7 +6,7 @@
 /*   By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 12:21:16 by imedgar           #+#    #+#             */
-/*   Updated: 2020/05/02 13:14:57 by imedgar          ###   ########.fr       */
+/*   Updated: 2020/11/19 20:53:53 by imedgar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char			**ft_split(char const *s, char c)
 	int		words;
 	int		crs;
 
-	if (!s)
+	if (!s && !*s)
 		return (NULL);
 	ft_calc_words((char *)s, c, &words);
 	if (!(new = (char **)malloc(sizeof(char *) * (words + 1))))

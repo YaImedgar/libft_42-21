@@ -6,7 +6,7 @@
 #    By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/03 23:24:43 by imedgar           #+#    #+#              #
-#    Updated: 2020/11/18 22:12:38 by imedgar          ###   ########.fr        #
+#    Updated: 2020/11/19 20:43:51 by imedgar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRC_LIB			=	ft_atoi.c			\
 					ft_isascii.c		\
 					ft_isdigit.c		\
 					ft_isprint.c		\
+					ft_isspace.c		\
 					ft_itoa.c			\
 					ft_itoa_base.c		\
 					ft_memccpy.c		\

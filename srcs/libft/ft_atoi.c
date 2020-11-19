@@ -6,7 +6,7 @@
 /*   By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 18:51:29 by imedgar           #+#    #+#             */
-/*   Updated: 2020/05/04 12:54:45 by imedgar          ###   ########.fr       */
+/*   Updated: 2020/11/19 20:43:59 by imedgar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,6 @@ static int		ft_compare(const char *nptr, int neg, long long num)
 		}
 	}
 	return (neg ? num * -1 : num);
-}
-
-static int		ft_isspace(char c)
-{
-	return (c == ' ' ||
-			c == '\t' ||
-			c == '\n' ||
-			c == '\r' ||
-			c == '\f' ||
-			c == '\v');
 }
 
 int				ft_atoi(const char *nptr)
