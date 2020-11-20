@@ -6,11 +6,11 @@
 /*   By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/17 20:57:13 by imedgar           #+#    #+#             */
-/*   Updated: 2020/11/18 19:08:47 by imedgar          ###   ########.fr       */
+/*   Updated: 2020/11/20 15:41:46 by imedgar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 
 int				ft_putchars(char c, int nbr, char *str, t_fl *fl)
 {

@@ -6,7 +6,7 @@
 /*   By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 20:09:52 by imedgar           #+#    #+#             */
-/*   Updated: 2020/05/14 18:57:36 by imedgar          ###   ########.fr       */
+/*   Updated: 2020/11/20 15:45:24 by imedgar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,9 +88,7 @@ int			ft_exit_gnl(char *buf, int fd, t_gnl **prime, int result)
 			temp->next = temp1->next;
 			temp = temp1;
 		}
-		free(temp->tail);
-		free(temp->start_tail);
-		free(temp);
+		ft_free_all(2, &temp->start_tail, &temp);
 	}
 	return (result == -1 ? -1 : 0);
 }

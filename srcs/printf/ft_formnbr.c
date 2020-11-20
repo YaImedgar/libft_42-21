@@ -6,11 +6,11 @@
 /*   By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/17 20:57:30 by imedgar           #+#    #+#             */
-/*   Updated: 2020/11/18 19:11:05 by imedgar          ###   ########.fr       */
+/*   Updated: 2020/11/20 15:41:40 by imedgar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "ft_dprintf.h"
 
 static char		*ft_nbr(char *num, int len, int prec)
 {

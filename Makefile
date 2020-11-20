@@ -6,7 +6,7 @@
 #    By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/03 23:24:43 by imedgar           #+#    #+#              #
-#    Updated: 2020/11/19 20:43:51 by imedgar          ###   ########.fr        #
+#    Updated: 2020/11/20 15:44:43 by imedgar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,9 +48,10 @@ SRC_LIB			=	ft_atoi.c			\
 					ft_substr.c			\
 					ft_tolower.c		\
 					ft_toupper.c		\
-					ft_strcmp.c
+					ft_strcmp.c			\
+					ft_free_all.c
 
-SRC_PRINTF		=	ft_printf.c			\
+SRC_PRINTF		=	ft_dprintf.c		\
 					ft_putchars.c		\
 					ft_formchar.c		\
 					ft_formstr.c		\

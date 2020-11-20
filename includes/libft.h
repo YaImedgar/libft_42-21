@@ -6,7 +6,7 @@
 /*   By: imedgar <imedgar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/03 22:58:16 by imedgar           #+#    #+#             */
-/*   Updated: 2020/11/19 20:44:01 by imedgar          ###   ########.fr       */
+/*   Updated: 2020/11/20 15:45:50 by imedgar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
 size_t			ft_strlcat(char *dest, const char *src, size_t size);
 size_t			ft_strlcpy(char *dest, const char *src, size_t size);
@@ -53,5 +54,6 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 int				ft_strcmp(const char *s1, const char *s2);
+void			ft_free_all(int num_to_del, ...);
 
 #endif
