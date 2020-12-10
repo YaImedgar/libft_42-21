@@ -88,7 +88,6 @@ static int		get_line(int fd, char **line, t_gnl *t_temp, t_gnl **prime)
 	long long		ret;
 	char			*p_lf;
 	char			*buf;
-	int				res_from_sup;
 
 	p_lf = NULL;
 	ret = 0;
@@ -99,8 +98,7 @@ static int		get_line(int fd, char **line, t_gnl *t_temp, t_gnl **prime)
 		if (ret < 0)
 			return (ft_exit_gnl(buf, fd, prime, -1));
 		buf[ret] = '\0';
-		res_from_sup = get_line_sup(buf, &p_lf, t_temp, line);
-		if (res_from_sup == -1)
+		if (-1 == get_line_sup(buf, &p_lf, t_temp, line))
 			return (ft_exit_gnl(buf, fd, prime, -1));
 	}
 	if (ret < buf_s && t_temp->tail == NULL)
@@ -116,11 +114,9 @@ int				get_next_line(int fd, char **line)
 	t_gnl			*t_temp;
 	char			check[1];
 
-	if (buf_s < 1 ||
-		!line || fd < 0 ||
-		((read(fd, check, 0)) < 0))
-		return (ft_exit_gnl(NULL, fd, &prime, -1));
-	if (!(t_temp = ft_find_lst_gnl(fd, &prime)) ||
+	if (buf_s < 1 || !line || fd < 0 ||
+		((read(fd, check, 0)) < 0) ||
+		!(t_temp = ft_find_lst_gnl(fd, &prime)) ||
 		!(*line = ft_last_str(line, t_temp)))
 		return (ft_exit_gnl(NULL, fd, &prime, -1));
 	return (get_line(fd, line, t_temp, &prime));

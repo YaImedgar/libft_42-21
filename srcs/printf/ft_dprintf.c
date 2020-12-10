@@ -64,7 +64,7 @@ int				ft_form_prnt(va_list factor, const char **format, int fd)
 
 void			ft_prec(const char **str, va_list factor, t_fl *fl)
 {
-	long long star;
+	long long	star;
 
 	(*str)++;
 	if (**str == '*')

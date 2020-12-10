@@ -90,5 +90,5 @@ int			ft_exit_gnl(char *buf, int fd, t_gnl **prime, int result)
 		}
 		ft_free_all(2, &temp->start_tail, &temp);
 	}
-	return (result == -1 ? -1 : 0);
+	return (result);
 }
