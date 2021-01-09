@@ -68,11 +68,19 @@ static int		get_line_sup(char *buf, char **p_lf, t_gnl *t_temp, char **line)
 {
 	if (((*p_lf) = ft_strchr_gnl(buf, '\n')))
 	{
-		(**p_lf) = '\0';
-		++(*p_lf);
-		if (!(t_temp->tail = ft_strdup_gnl(*p_lf)))
-			return (-1);
-		t_temp->start_tail = t_temp->tail;
+		if ((*(*p_lf - 1)) == '\\')
+		{
+			(*(*p_lf - 1)) = '\0';
+			*p_lf = NULL;
+		}
+		else
+		{
+			(**p_lf) = '\0';
+			++(*p_lf);
+			if (!(t_temp->tail = ft_strdup_gnl(*p_lf)))
+				return (-1);
+			t_temp->start_tail = t_temp->tail;
+		}
 	}
 	t_temp->line_back_up = *line;
 	if (!(*line = ft_strjoin_gnl(*line, buf)))

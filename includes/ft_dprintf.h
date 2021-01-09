@@ -15,7 +15,7 @@
 
 # include "libft.h"
 
-# define ERROR -2
+# define ERROR_DPF -2
 
 typedef struct	s_fl
 {

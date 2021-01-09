@@ -25,7 +25,7 @@ int				ft_dprintf(int fd, const char *format, ...)
 			res += ft_putchar_fd(*format++, fd);
 		else
 		{
-			if ((tmp = ft_form_prnt(factor, &format, fd)) == ERROR)
+			if ((tmp = ft_form_prnt(factor, &format, fd)) == ERROR_DPF)
 				break ;
 			res += tmp;
 		}
@@ -59,7 +59,7 @@ int				ft_form_prnt(va_list factor, const char **format, int fd)
 		}
 		++str;
 	}
-	return (*str ? ft_type(&fl, str, factor, format) : ERROR);
+	return (*str ? ft_type(&fl, str, factor, format) : ERROR_DPF);
 }
 
 void			ft_prec(const char **str, va_list factor, t_fl *fl)

@@ -77,19 +77,19 @@ int				ft_print_nbr(long long adr, t_fl *fl, char base, char x)
 	if (fl->neg_prec)
 		fl->prec = -1;
 	if (!(num = ft_itoa_base(adr, base, x)))
-		return (ERROR);
+		return (ERROR_DPF);
 	if (fl->type == 'i' && fl->zer && fl->prec != -1)
 		fl->zer = 0;
 	len = ft_strlen(num);
 	if (fl->prec > len || (adr < 0 && fl->prec == len))
 	{
 		if (!(num = ft_nbr(num, len, fl->prec)))
-			return (ERROR);
+			return (ERROR_DPF);
 	}
 	else if (fl->zer && !fl->pdn &&
 			((fl->width > len && fl->prec == -1) || fl->prec > len))
 		if (!(num = ft_zer(num, len, fl->width, fl)))
-			return (ERROR);
+			return (ERROR_DPF);
 	if (fl->prec == 0 && num[0] == '0')
 		num[0] = 0;
 	res = ft_putchars(' ', fl->width - ft_strlen(num), num, fl);
